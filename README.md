@@ -2,6 +2,15 @@
 
 Simple countdown timer
 
+## Usage
+
+Keyboard:
+
+* Arrow Up: Add one minute to timer
+* Arrow Down: Subtract one minute to timer
+* Space Bar: Start/Stop the timer
+* Escape: Reset timer 
+
 ## Develpment
 
 The use of the [yarn](https://yarnpkg.com/) package manager is strongly recommended, as opposed to using `npm`.
