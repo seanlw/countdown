@@ -1,0 +1,39 @@
+#timesup,
+#countdown {
+  justify-content: center;
+  align-self: center;
+  padding: var(--spacing-double);
+  align-items: center;
+  width: 100%;
+}
+
+#countdown {
+  background-image: var(--background-gradient);
+}
+
+#timesup {
+  background-color: var(--timesup-background-color);
+}
+
+
+
+.timer-container {
+  .time {
+    font-family: var(--font-family-monospace);
+    font-size: var(--countdown-font-size);
+    font-weight: 700;
+  }
+}
+
+.timesup-container {
+
+  .text {
+    font-size: var(--timesup-font-size);
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  .directions {
+    text-align: center;
+  }
+}
