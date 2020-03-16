@@ -47,10 +47,10 @@ app.on('ready', () => {
   )
 
   ipcMain.on(
-    'fullscreen', 
+    'kiosk', 
     (event: Electron.IpcMessageEvent, flag: boolean) => {
       if (mainWindow) {
-        mainWindow.setFullScreen(flag)
+        mainWindow.setKiosk(flag)
       }
     }
   )

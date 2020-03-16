@@ -28,8 +28,6 @@ export class AppWindow {
     const windowOptions: Electron.BrowserWindowConstructorOptions = {
       x: savedWindowState.x,
       y: savedWindowState.y,
-      width: savedWindowState.width,
-      height: savedWindowState.height,
       minWidth: this.minWidth,
       minHeight: this.minHeight,
       show: false,
@@ -38,11 +36,11 @@ export class AppWindow {
         webSecurity: !__DEV__,
       },
       frame: false,
-      resizable: false
     }
 
     if (__DARWIN__) {
       windowOptions.titleBarStyle = 'hidden'
+      windowOptions.resizable = false
     }
 
     if (__LINUX__) {
@@ -98,8 +96,8 @@ export class AppWindow {
     this.window.webContents.send('menu-event', { name })
   }
 
-  public setFullScreen(flag: boolean) {
-    this.window.setFullScreen(flag)
+  public setKiosk(flag: boolean) {
+    this.window.setKiosk(flag)
   }
 
   private emitDidLoad() {

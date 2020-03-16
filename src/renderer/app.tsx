@@ -68,7 +68,7 @@ export class App extends React.Component<IAppProps, IAppState> {
     }
     else if (e.key === 'Escape') {
       this.props.dispatcher.clearTimer()
-      ipcRenderer.send('fullscreen', false)
+      ipcRenderer.send('kiosk', false)
     }
     else if (e.key === ' ') {
       if (state.countingdown) {
@@ -76,7 +76,7 @@ export class App extends React.Component<IAppProps, IAppState> {
       }
       else {
         this.props.dispatcher.startTimer()
-        ipcRenderer.send('fullscreen', true)
+        ipcRenderer.send('kiosk', true)
       }
     }
   }
