@@ -95,8 +95,10 @@ export class AppStore extends TypedBaseStore<IAppState> {
     const time = duration(seconds, 'seconds')
     const sec = time.seconds() < 10 ? ('0' + time.seconds()) : time.seconds()
     const min = time.minutes()
+    const min0 = time.minutes() < 10 ? ('0' + time.minutes()) : time.minutes()
+    const hr = time.hours()
 
-    return `${min}:${sec}`
+    return hr === 0 ? `${min}:${sec}`: `${hr}:${min0}:${sec}`
   }
 
 }
