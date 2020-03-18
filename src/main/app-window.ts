@@ -30,6 +30,8 @@ export class AppWindow {
       y: savedWindowState.y,
       minWidth: this.minWidth,
       minHeight: this.minHeight,
+      width: this.minWidth,
+      height: this.minHeight,
       show: false,
       backgroundColor: '#0575e9',
       webPreferences: {
