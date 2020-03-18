@@ -11,6 +11,14 @@ export class Dispatcher {
     return this.appStore.loadInitialState()
   }
 
+  public addSecond(): Promise<void> {
+    return this.appStore._addSecond()
+  }
+
+  public subtractSecond(): Promise<void> {
+    return this.appStore._subtractSecond()
+  }
+
   public addMinute(): Promise<void> {
     return this.appStore._addMinute()
   }

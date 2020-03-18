@@ -74,6 +74,17 @@ export class AppStore extends TypedBaseStore<IAppState> {
     this._setTime(defaultStartTime)
   }
 
+  public async _addSecond() {
+    this._setTime(this.seconds + 1)
+  }
+
+  public async _subtractSecond() {
+    if (this.seconds <= 0) {
+      return
+    }
+    this._setTime(this.seconds - 1)
+  }
+
   public async _addMinute() {
     this._setTime(this.seconds + 60)
   }

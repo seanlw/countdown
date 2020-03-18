@@ -66,6 +66,12 @@ export class App extends React.Component<IAppProps, IAppState> {
     else if (e.key === 'ArrowDown') {
       this.props.dispatcher.subtractMinute()
     }
+    else if (e.key === 'ArrowRight') {
+      this.props.dispatcher.addSecond()
+    }
+    else if (e.key === 'ArrowLeft') {
+      this.props.dispatcher.subtractSecond()
+    }
     else if (e.key === 'Escape') {
       this.props.dispatcher.clearTimer()
       ipcRenderer.send('kiosk', false)
