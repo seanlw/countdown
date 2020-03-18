@@ -8,6 +8,8 @@ Keyboard:
 
 * Arrow Up: Add one minute to timer
 * Arrow Down: Subtract one minute to timer
+* Arrow Right: Add one second to timer
+* Arrow Left: Subtract one second to timer
 * Space Bar: Start/Stop the timer
 * Escape: Reset timer 
 
