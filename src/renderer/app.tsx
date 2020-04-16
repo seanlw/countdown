@@ -76,6 +76,14 @@ export class App extends React.Component<IAppProps, IAppState> {
       this.props.dispatcher.clearTimer()
       ipcRenderer.send('kiosk', false)
     }
+    else if (e.key === ' ' && e.ctrlKey) {
+      if (state.countingdown) {
+        this.props.dispatcher.stopTimer()
+      }
+      else {
+        this.props.dispatcher.startTimer()
+      }
+    }
     else if (e.key === ' ') {
       if (state.countingdown) {
         this.props.dispatcher.stopTimer()
