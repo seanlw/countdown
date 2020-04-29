@@ -4,6 +4,7 @@ import {
 } from '../app-state'
 import { TypedBaseStore } from './base-store'
 import { duration } from 'moment'
+import { remote } from 'electron'
 
 const defaultStartTime = 600
 
@@ -17,6 +18,7 @@ export class AppStore extends TypedBaseStore<IAppState> {
   private timeString: string = ''
   private timeInterval: any = null
   private countingdown: boolean = false
+  private powerSaveId: number = -1
 
   protected emitUpdate() {
     if (this.emitQueued) {
@@ -56,6 +58,7 @@ export class AppStore extends TypedBaseStore<IAppState> {
   public async _startTimer() {
     this.timesup = false
     this.countingdown = true
+    this.powerSaveId = remote.powerSaveBlocker.start('prevent-display-sleep')
     this.timeInterval = window.setInterval(() => {
       const newSeconds = this.seconds - 1
       this._setTime(newSeconds)
@@ -98,6 +101,7 @@ export class AppStore extends TypedBaseStore<IAppState> {
 
   public async _stopTimer() {
     this.countingdown = false
+    remote.powerSaveBlocker.stop(this.powerSaveId)
     window.clearInterval(this.timeInterval)
     this.emitUpdate()
   }
